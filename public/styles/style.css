@@ -1,0 +1,544 @@
+* {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    background-color: #191919;
+    padding: 20px 0;
+    z-index: 11;
+}
+
+.nav__logo {
+    margin: auto 40px;
+}
+
+nav {
+    background-color: #191919;
+    margin: auto 0;
+    transition: all .3s ease-out;
+}
+
+.header__btn {
+    opacity: 0;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    margin: 0 30px;
+}
+
+.link--selected {
+    font-weight: 700;
+}
+
+.link:hover {
+    font-weight: 700;
+}
+
+.calltoaction {
+    display: flex;
+    padding-top: 185px;
+    flex-direction: column;
+    height: 590px;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bgimage {
+    height: 591px;
+    position: absolute;
+    right: 0;
+    top: 66px;
+}
+
+.text {
+    color: white;
+    position: relative;
+}
+
+.text__title {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.text__body {
+    max-width: 615px;
+    margin: 0 auto;
+}
+
+.text__title--big {
+    text-align: center;
+    font-size: 48px;
+}
+
+.text__body--big {
+    text-align: center;
+    font-size: 24px;
+}
+
+.button {
+    position: relative;
+    height: 52px;
+    width: fit-content;
+    padding: 0 50px;
+    box-sizing: content-box;
+    border-radius: 26px;
+    border: none;
+    background-color: white;
+    font-size: 20px;
+    margin: 70px auto;
+    margin-bottom: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.product {
+    background-color: #191919;
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+}
+
+.productImage {
+    margin-left: 90px;
+}
+
+.verticalContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 536px;
+}
+
+.text__body--medium {
+    font-size: 18px;
+}
+
+.text__title--medium {
+    line-height: 40px;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.button--medium {
+    margin: 50px auto;
+    margin-bottom: 0;
+    height: 45px;
+}
+
+.characteristics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 310px;
+    margin: 20px;
+    text-align: center;
+}
+
+.text__title--small {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.text--dark {
+    color: #191919;
+}
+
+.featureIcon {
+    width: fit-content;
+}
+
+.ad {
+    width: 100%;
+    height: 300px;
+    background-image: url('https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/headphones/noise_cancelling_headphones_700/images/noise_cancelling_headphones_700_SC_05.psd/jcr:content/renditions/cq5dam.web.1920.1920.jpeg');
+    background-position: 0 -80%;
+    padding-left: 35vw;
+    padding-top: 90px;
+}
+
+.ad__title {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 40px;
+    font-size: 36px;
+}
+
+.ad__body {
+    margin: 0 ;
+}
+
+.ad__button {
+    margin: 25px 25%;
+}
+
+.imageGallery {
+    background-color: #191919;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 50px;
+}
+
+.gallery {
+    position: relative;
+    top: -8vw;
+    justify-self: flex-start;
+    align-self: flex-start;
+    display: flex;
+    margin: 20px 0;
+    
+}
+
+.gallery__button {
+    width: 98vw;
+    align-self: flex-start;
+    position: relative;
+    top: 12vw;
+    padding: 2vw;
+    z-index: 10;
+}
+
+.prev {
+    float: left;
+}
+
+.next {
+    float: right;
+}
+
+.gallery__img {
+    height: 100%;
+}
+
+.gallery__container {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+}
+
+.gallery__tape {
+    display: flex;
+    height: 25vw;
+    transition: transform .3s ease-in-out;
+    transform: translate(-100vw, 0);
+    overflow: hidden;
+}
+
+.gallery__tape--inactive {
+    transition: none;
+}
+
+.text__title--centered {
+    text-align: center;
+    margin: 0;
+}
+
+.spec {
+    color: #191919;
+    padding: 8vw;
+}
+
+.spec__row {
+    display: flex;
+    margin: 70px 0;
+}
+
+.spec__block {
+    margin: 0 auto;
+    max-width: 40%;
+    position: relative;
+}
+
+.spec__block--left {
+    margin-left: 60px;
+}
+
+.spec__block--right {
+    margin-right: 60px;
+}
+
+.spec__items {
+    display: flex;
+    width: fit-content;
+}
+
+.spec__img {
+    margin-right: 15px;
+}
+
+.spec__title {
+    box-sizing: content-box;
+    font-weight: 400;
+    font-size: 20px;
+    margin: auto;
+}
+
+.spec__text {
+    margin-top: 25px;
+}
+
+.interaction__title {
+    display: flex;
+    flex-direction: column;
+    background-color: #191919;
+    height: 340px;
+    color: white;
+    padding-top: 50px;
+
+}
+
+.button--dark {
+    margin: 20px auto;
+    background-color: #191919;
+    border: white solid 2px;
+    color: white;
+}
+
+.model {
+    background-color: white;
+    height: 330px;
+    padding: 0 20%;
+    display: flex;
+    width: 100vw;
+}
+
+.inter__colorSelector {
+    position: relative;
+    top: -160px;
+    left: -200px;
+    display: flex;
+    flex-direction: row;
+    transform-origin: center;
+    transform: rotate(90deg);
+}
+
+.inter__color {
+    height: 45px;
+    position: relative;
+    margin: 0 -7px;
+}
+
+.inter__color--odd {
+    top: 23px;
+}
+
+.productModel {
+    height: 496px;
+    position: relative;
+    top: -200px;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.text_body--centered {
+    text-align: center;
+}
+
+.button--black {
+    background-color: #191919;
+    color: white;
+    height: 40px;
+    margin: 20px auto;
+    margin-bottom: 60px;
+}
+
+.newsletter__text {
+    margin: 0 auto;
+}
+
+.inputText {
+    width: 80%;
+    max-width: 670px;
+    margin: 10px auto;
+    border-radius: 20px;
+    border: #191919 solid 1px;
+    height: 25px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+footer {
+    background-color: #191919;
+    height: 225px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo--footer {
+    margin: 40px;
+}
+
+.vertical {
+  border-left: 2px solid white;
+  height: 90%;
+  left: 50%;
+  margin: auto 0;
+  margin-left: -3px;
+  width: 6px;
+}
+
+.links {
+    margin: 40px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 720px) {
+
+    .calltoaction {
+        background-position: -500px 0;
+    }
+
+    .characteristics {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .product {
+        flex-direction: column-reverse;
+    }
+
+    .spec__row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+    }
+
+    .spec__block {
+        max-width: 100%;
+        margin: 30px 0;
+        padding: 0;
+        align-self: flex-start;
+    }
+
+    .ad {
+        padding: 50px;
+    }
+
+    .text__title--medium {
+        font-size: 24px;
+    }
+
+    .model {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .inter__colorSelector {
+        transform: rotate(0deg);
+        left: 0;
+        top: -120px;
+        transform: scale(0.85);
+
+    }
+
+    .productModel {
+        top: -50px;
+    }
+
+    .newsletter {
+        margin-top: 15%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inputText {
+        width: 70%;
+    }
+
+    .text--dark {
+        width: 70%;
+    }
+
+    .text__body--medium {
+        font-size: 15px;
+    }
+
+    .text__body--big {
+        font-size: 18px;
+        max-width: 80%;
+    }
+
+    .text__title--big {
+        font-size: 28px;
+    }
+
+    header {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+
+    nav {
+        opacity: 0;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        pointer-events: none;
+        transform: translate(-100%, 0%);
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .nav--active {
+        opacity: 1;
+        pointer-events: all;
+        transform: translate(0%, 0%);
+    }
+
+    nav a {
+        margin: 10px;
+    }
+
+    .header__btn {
+        opacity: 1;
+    }
+
+    .nav__logo {
+        margin: 0 auto;
+    }
+
+    .prev {
+        height: 50px;
+    }
+
+    .next {
+        height: 50px;
+    }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "192-web-taller2",
+  "version": "1.0.0",
+  "description": "Taller 2 programación web",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanbravozu/192-web-bose2.git"
+  },
+  "author": "Juan David Bravo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanbravozu/192-web-bose2/issues"
+  },
+  "homepage": "https://github.com/juanbravozu/192-web-bose2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "handlebars": "^4.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
