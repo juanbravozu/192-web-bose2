@@ -14,7 +14,10 @@ app.get('/', (request, response) => {
     response.sendFile(__dirname+'/public/index.html');
 });
 
+app.get('/tienda', (request, response) => {
+    response.sendFile(__dirname+'/public/store.html');
+});
 
 app.listen(port, () => {
     console.log(`Conexión iniciada en el puerto ${port}`);
-})
+});
