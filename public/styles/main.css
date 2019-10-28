@@ -10,17 +10,83 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  width: 100%;
   height: 100vh;
   -webkit-box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  padding: 20px;
+}
+
+.filter__form {
+  margin-bottom: 10px;
+}
+
+.filter__textInput {
+  height: 31px;
+  background-color: #E5E5E5;
+  border: none;
+  border-radius: 16px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.filter__button {
+  height: 31px;
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  background: none;
+  border: none;
+}
+
+.filter__title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.filter__select {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #E5E5E5;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.filter__body {
+  font-size: 18px;
+}
+
+.filter__checkbox {
+  margin: 5px 0;
+  position: relative;
+  width: 100%;
+}
+
+.filter__checkbox input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: absolute;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  background: none;
+  border: 2px solid black;
+}
+
+.filter__checkbox input:checked {
+  background-color: black;
+}
+
+.filter__range {
+  width: 100%;
+  margin: 10px 0;
 }
 
 .items {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
-  width: 100%;
   height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */
