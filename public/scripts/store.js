@@ -27,6 +27,10 @@ function handleLoad() {
                 var topHalf = document.createElement('div');
                 topHalf.classList.add('items__top');
 
+                topHalf.addEventListener('click', () => {
+                    window.location = '/producto/'+item._id;
+                });
+
                 var img = document.createElement('img');
                 img.classList.add('items__img');
                 img.setAttribute('src', './images'+item.image);
@@ -34,9 +38,10 @@ function handleLoad() {
                 var bottomHalf = document.createElement('div');
                 bottomHalf.classList.add('items__bottom');
 
-                var title = document.createElement('h1');
+                var title = document.createElement('a');
                 title.classList.add('items__title');
                 title.innerHTML = item.name;
+                title.setAttribute('href', '/producto/'+item._id);
 
                 var price = document.createElement('p');
                 price.classList.add('items__body');
@@ -61,7 +66,7 @@ function handleLoad() {
 
                 var detailsButton = document.createElement('a');
                 detailsButton.classList.add('items__itemDetails');
-                detailsButton.setAttribute('href', '/productDetail/'+item._id);
+                detailsButton.setAttribute('href', '/producto/'+item._id);
                 detailsButton.innerHTML = 'Ver detalles';
 
                 var addButton = document.createElement('button');

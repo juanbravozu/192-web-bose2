@@ -12,6 +12,10 @@ $grisOscuro: #D6D6D6;
     position: relative;
     padding: 20px;
 
+    select:focus {
+        outline: none;
+    }
+
     &__form {
         margin-bottom: 10px;
     }
@@ -64,6 +68,7 @@ $grisOscuro: #D6D6D6;
             height: 14px;
             background-color: #FFF;
             border: 2px solid black;
+            cursor: pointer;
 
             transition: background-color .2s ease-out;
 
@@ -117,6 +122,7 @@ $grisOscuro: #D6D6D6;
         justify-content: center;
         background-color: $grisClaro;
         transition: all .2s ease-out;
+        cursor: pointer;
 
         &:hover {
             background-color: $grisOscuro;
@@ -136,8 +142,12 @@ $grisOscuro: #D6D6D6;
     }
 
     &__title {
+        display: block;
         font-size: 18px;
+        font-weight: 700;
         color: white;
+        cursor: pointer;
+        text-decoration: none;
     }
 
     &__body {
@@ -156,7 +166,7 @@ $grisOscuro: #D6D6D6;
     &__rating {
         display: inline;
         position: relative;
-        right: 0;
+        left: 160px;
     }
 
     &__buttons {
@@ -202,6 +212,10 @@ $grisOscuro: #D6D6D6;
         &:hover {
             background-color: $grisClaro;
             cursor: pointer;
+        }
+
+        &:focus {
+            outline: none;
         }
     }
 }
