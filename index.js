@@ -20,6 +20,8 @@ const dbName = 'store';
 
 const client = new MongoClient(url);
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
 client.connect((err) => {
     assert.equal(null, err);
 

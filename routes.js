@@ -1,5 +1,5 @@
 const assert = require('assert');
-const objectID = require('mongodb').ObjectID;
+const ObjectID = require('mongodb').ObjectID;
 
 function createRoutes(app, db) {
     app.get('/', (request, response) => {
@@ -19,6 +19,25 @@ function createRoutes(app, db) {
                 assert.equal(null, err);
 
                 response.send(result);
+            });
+    });
+
+    app.get('/producto/:id', (request, response) => {
+        var id = request.params.id;
+        console.log(id);
+
+        var products = db.collection('products');
+
+        products.find({ "_id": new ObjectID(id)})
+            .toArray((err, result) => {
+                assert.equal(null, err);
+
+                var context = {
+                    product: result[0]
+                };
+
+                console.log(context);
+                response.render('productDetails', context);
             });
     });
 }
