@@ -219,3 +219,57 @@ $grisOscuro: #D6D6D6;
         }
     }
 }
+
+.shoppingCart {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+    transition: color .2s ease-out;
+    color: white;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        color: $grisClaro;
+    }
+}
+
+.productDetail {
+    background-color: white;
+    padding: 60px;
+
+    &__link {
+        text-decoration: none;
+        color: black;
+        display: inline;
+        font-size: 18px;
+        font-weight: 400;
+
+        &:hover {
+            font-weight: 700;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+    
+        &--small {
+            font-size: 18px;
+            display: inline;
+        }
+    }
+
+    &__text {
+        color: black;
+        font-weight: 400;
+
+        &--separator {
+            margin: 0 10px;
+            display: inline;
+        }
+    }
+}

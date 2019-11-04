@@ -245,4 +245,59 @@
 .items__cartButton:focus {
   outline: none;
 }
+
+.shoppingCart {
+  border: none;
+  background: none;
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+  -webkit-transition: color .2s ease-out;
+  transition: color .2s ease-out;
+  color: white;
+}
+
+.shoppingCart:focus {
+  outline: none;
+}
+
+.shoppingCart:hover {
+  color: #E5E5E5;
+}
+
+.productDetail {
+  background-color: white;
+  padding: 60px;
+}
+
+.productDetail__link {
+  text-decoration: none;
+  color: black;
+  display: inline;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.productDetail__link:hover {
+  font-weight: 700;
+}
+
+.productDetail__title {
+  font-weight: 700;
+}
+
+.productDetail__title--small {
+  font-size: 18px;
+  display: inline;
+}
+
+.productDetail__text {
+  color: black;
+  font-weight: 400;
+}
+
+.productDetail__text--separator {
+  margin: 0 10px;
+  display: inline;
+}
 /*# sourceMappingURL=main.css.map */

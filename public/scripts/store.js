@@ -70,7 +70,7 @@ function handleLoad() {
                 detailsButton.innerHTML = 'Ver detalles';
 
                 var addButton = document.createElement('button');
-                addButton.classList.add('fas', 'fa-cart-plus', 'items__cartButton');
+                addButton.classList.add('fas', 'fa-cart-plus', 'fa-lg', 'items__cartButton');
 
                 topHalf.appendChild(img);
                 bottomHalf.appendChild(title);

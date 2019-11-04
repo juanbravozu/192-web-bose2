@@ -1,11 +1,7 @@
-<header>
-        <a href="#" class="nav__logo"><img src="./images/logo.png" alt="Bose logo"></a>
-        <input type="image" src="./images/menu.svg" class="header__btn">
-        <nav>
-            <a href="/" class="link">Inicio</a>
-            <a href="#" class="link link--selected">Tienda</a>
-            <a href="#" class="link">Galería</a>
-            <a href="#" class="link">Acerca de</a>
-        </nav>
-        <h1>{{product.name}}</h1>
-    </header>
+<section class="productDetail">
+    <div class="productDetail__path">
+        <a href="/tienda" class="productDetail__link">Tienda</a>
+        <p class="productDetail__text productDetail__text--separator">/</p>
+        <p class="productDetail__title productDetail__title--small">{{product.name}}</p>
+    </div>
+</section>
