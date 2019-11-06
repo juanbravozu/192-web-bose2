@@ -1,24 +1,16 @@
 function handleLoad() {
 
-    var filter = document.querySelector('.filter');
-    var range = document.querySelector('.filter__range');
-
-    var displayValue = document.createElement('p');
-    displayValue.classList.add('filter_rangeValue');
-
-    displayValue.innerHTML = '$'+range.value;
-    filter.appendChild(displayValue);
-
-    range.addEventListener('input', () => {
-        displayValue.innerHTML = '$'+range.value;
-    });
     
-    function getProducts() {
-        fetch('/api/products').then((raw) => {
+    
+    function getProducts(route) {
+        fetch('/api/products'+route).then((raw) => {
             return raw.json();
         })
         .then((info) => {
             var container = document.querySelector('.items');
+
+            container.innerHTML = '';
+
             console.log(info);
             info.forEach((item) => {
                 var product = document.createElement('div');
@@ -87,7 +79,32 @@ function handleLoad() {
         });
     }
 
-    getProducts();
+    getProducts('');
+
+    var select = document.querySelector('.filter__select');
+    var checkBoxes = document.querySelectorAll('.filter__inputCheckbox');
+
+    var filter = document.querySelector('.filter');
+    var range = document.querySelector('.filter__range');
+
+    var displayValue = document.createElement('p');
+    displayValue.classList.add('filter_rangeValue');
+
+    displayValue.innerHTML = '$'+range.value;
+    filter.appendChild(displayValue);
+
+    function handleChange() {
+        var route = '?orderBy='+select.value;
+        getProducts(route);
+
+        checkBoxes.forEach((checkBox) => {
+            if(checkBox.checked) {
+                
+            }
+        });
+    };
+
+    select.addEventListener('change', handleChange);
 }
 
 window.addEventListener('load', handleLoad);

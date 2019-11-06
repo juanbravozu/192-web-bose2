@@ -36,8 +36,9 @@
 
             <select name="sort" class="filter__select">
                 <option value="none">Ninguno</option>
-                <option value="stars">Popularidad</option>
-                <option value="price">Precio</option>
+                <option value="rating">Popularidad</option>
+                <option value="expensive">Mayor precio</option>
+                <option value="cheaper">Menor precio</option>
                 <option value="name">Nombre</option>
             </select>
 
@@ -45,21 +46,21 @@
 
             <div class="filter__checkbox">
                 <label for="type__speaker" class="filter__body">Altavoces</label>
-                <input type="checkbox" id="type__speaker" value="speaker">
+                <input type="checkbox" id="type__speaker" value="speaker" class="filter__inputCheckbox">
             </div>
 
             <div class="filter__checkbox">
                 <label for="type__headphone" class="filter__body">Audífonos</label>
-                <input type="checkbox" id="type__headphone" value="headphone">
+                <input type="checkbox" id="type__headphone" value="headphone" class="filter__inputCheckbox">
             </div>
 
             <div class="filter__checkbox">
                 <label for="type__glasses" class="filter__body">Audio-lentes</label>
-                <input type="checkbox" id="type__glasses" value="glasses">
+                <input type="checkbox" id="type__glasses" value="glasses" class="filter__inputCheckbox">
             </div>
 
             <h1 class="filter__title">Precio máximo:</h1>
-            <input type="range" min="100000" max="1500000" name="priceRange" class="filter__range" value="1500000">
+            <input type="range" min="100000" max="1600000" name="priceRange" class="filter__range" value="1600000">
 
         </div>
 

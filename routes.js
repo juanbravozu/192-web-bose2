@@ -13,13 +13,64 @@ function createRoutes(app, db) {
     app.get('/api/products', (request, response) => {
         var products = db.collection('products');
         
-        products.find({})
+        var order = request.query.orderBy;
+
+        var cursor = products.find();
+
+        if(order == 'rating') {
+            cursor.sort({ rating: -1 })
             .toArray((err, result) => {
 
                 assert.equal(null, err);
 
                 response.send(result);
+
+                return;
             });
+        } else if(order == 'expensive') {
+            cursor.sort({ price: -1 })
+            .toArray((err, result) => {
+
+                assert.equal(null, err);
+
+                response.send(result);
+
+                return;
+            });
+        } else if(order == 'cheaper') {
+            cursor.sort({ rating: 1 })
+            .toArray((err, result) => {
+
+                assert.equal(null, err);
+
+                response.send(result);
+
+                return;
+            });
+        } else if(order == 'name') {
+            cursor.sort({ name: 1 })
+            .toArray((err, result) => {
+
+                assert.equal(null, err);
+
+                response.send(result);
+
+                return;
+            });
+        } else {
+        
+            cursor
+            .toArray((err, result) => {
+
+                assert.equal(null, err);
+
+                response.send(result);
+
+                return;
+            });
+        
+        }
+        
     });
 
     app.get('/producto/:id', (request, response) => {
