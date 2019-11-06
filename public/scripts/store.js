@@ -12,70 +12,83 @@ function handleLoad() {
             container.innerHTML = '';
 
             console.log(info);
-            info.forEach((item) => {
-                var product = document.createElement('div');
-                product.classList.add('items__product');
 
-                var topHalf = document.createElement('div');
-                topHalf.classList.add('items__top');
-
-                topHalf.addEventListener('click', () => {
-                    window.location = '/producto/'+item._id;
+            console.log('length: '+info.length);
+            if(info.length > 0) {
+                info.forEach((item) => {
+                    var product = document.createElement('div');
+                    product.classList.add('items__product');
+    
+                    var topHalf = document.createElement('div');
+                    topHalf.classList.add('items__top');
+    
+                    topHalf.addEventListener('click', () => {
+                        window.location = '/producto/'+item._id;
+                    });
+    
+                    var img = document.createElement('img');
+                    img.classList.add('items__img');
+                    img.setAttribute('src', './images'+item.image);
+    
+                    var bottomHalf = document.createElement('div');
+                    bottomHalf.classList.add('items__bottom');
+    
+                    var title = document.createElement('a');
+                    title.classList.add('items__title');
+                    title.innerHTML = item.name;
+                    title.setAttribute('href', '/producto/'+item._id);
+    
+                    var price = document.createElement('p');
+                    price.classList.add('items__body');
+                    price.innerHTML = '$'+item.price;
+    
+                    var rating = document.createElement('div');
+                    rating.classList.add('items__rating');
+    
+                    var ratingIcon = document.createElement('img');
+                    ratingIcon.classList.add('items__ratingIcon');
+                    ratingIcon.setAttribute('src', './images/rating.png');
+    
+                    var ratingScore = document.createElement('p');
+                    ratingScore.classList.add('items__body', 'items__body--rating');
+                    ratingScore.innerHTML = item.rating;
+    
+                    rating.appendChild(ratingIcon);
+                    rating.appendChild(ratingScore);
+    
+                    var buttons = document.createElement('div');
+                    buttons.classList.add('items__buttons');
+    
+                    var detailsButton = document.createElement('a');
+                    detailsButton.classList.add('items__itemDetails');
+                    detailsButton.setAttribute('href', '/producto/'+item._id);
+                    detailsButton.innerHTML = 'Ver detalles';
+    
+                    var addButton = document.createElement('button');
+                    addButton.classList.add('fas', 'fa-cart-plus', 'fa-lg', 'items__cartButton');
+    
+                    topHalf.appendChild(img);
+                    bottomHalf.appendChild(title);
+                    bottomHalf.appendChild(price);
+                    bottomHalf.appendChild(rating);
+                    buttons.appendChild(detailsButton);
+                    buttons.appendChild(addButton);
+                    bottomHalf.appendChild(buttons);
+                    product.appendChild(topHalf);
+                    product.appendChild(bottomHalf);
+    
+                    container.appendChild(product);
                 });
+            } else {
+                var message = document.createElement('h1');
+                message.classList.add('text__title');
+                message.innerHTML = 'No se encontraron productos. Intenta con otros filtros.'
+                var itemsContainer = document.querySelector('.items');
 
-                var img = document.createElement('img');
-                img.classList.add('items__img');
-                img.setAttribute('src', './images'+item.image);
-
-                var bottomHalf = document.createElement('div');
-                bottomHalf.classList.add('items__bottom');
-
-                var title = document.createElement('a');
-                title.classList.add('items__title');
-                title.innerHTML = item.name;
-                title.setAttribute('href', '/producto/'+item._id);
-
-                var price = document.createElement('p');
-                price.classList.add('items__body');
-                price.innerHTML = '$'+item.price;
-
-                var rating = document.createElement('div');
-                rating.classList.add('items__rating');
-
-                var ratingIcon = document.createElement('img');
-                ratingIcon.classList.add('items__ratingIcon');
-                ratingIcon.setAttribute('src', './images/rating.png');
-
-                var ratingScore = document.createElement('p');
-                ratingScore.classList.add('items__body', 'items__body--rating');
-                ratingScore.innerHTML = item.rating;
-
-                rating.appendChild(ratingIcon);
-                rating.appendChild(ratingScore);
-
-                var buttons = document.createElement('div');
-                buttons.classList.add('items__buttons');
-
-                var detailsButton = document.createElement('a');
-                detailsButton.classList.add('items__itemDetails');
-                detailsButton.setAttribute('href', '/producto/'+item._id);
-                detailsButton.innerHTML = 'Ver detalles';
-
-                var addButton = document.createElement('button');
-                addButton.classList.add('fas', 'fa-cart-plus', 'fa-lg', 'items__cartButton');
-
-                topHalf.appendChild(img);
-                bottomHalf.appendChild(title);
-                bottomHalf.appendChild(price);
-                bottomHalf.appendChild(rating);
-                buttons.appendChild(detailsButton);
-                buttons.appendChild(addButton);
-                bottomHalf.appendChild(buttons);
-                product.appendChild(topHalf);
-                product.appendChild(bottomHalf);
-
-                container.appendChild(product);
-            });
+                itemsContainer.appendChild(message);
+                console.log('No hay items');
+            }
+            
         });
     }
 
@@ -84,27 +97,48 @@ function handleLoad() {
     var select = document.querySelector('.filter__select');
     var checkBoxes = document.querySelectorAll('.filter__inputCheckbox');
 
+    var search = document.querySelector('.filter__textInput');
+    var searchButton = document.querySelector('.filter__button');
+
     var filter = document.querySelector('.filter');
     var range = document.querySelector('.filter__range');
 
     var displayValue = document.createElement('p');
-    displayValue.classList.add('filter_rangeValue');
+    displayValue.classList.add('filter__rangeValue');
 
     displayValue.innerHTML = '$'+range.value;
     filter.appendChild(displayValue);
 
     function handleChange() {
         var route = '?orderBy='+select.value;
-        getProducts(route);
 
         checkBoxes.forEach((checkBox) => {
             if(checkBox.checked) {
-                
+                route = route.concat('&type='+checkBox.value);
             }
         });
+
+        route = route.concat('&price='+range.value);
+        
+        console.log(search.value);
+
+        getProducts(route);
     };
 
     select.addEventListener('change', handleChange);
+
+    checkBoxes.forEach((checkBox) => {
+        checkBox.addEventListener('change', handleChange);
+    });
+
+    range.addEventListener('input', () => {
+        displayValue.innerHTML = '$'+range.value;
+        filter.appendChild(displayValue);
+    });
+
+    range.addEventListener('change', handleChange);
+    
+    searchButton.addEventListener('onClick', handleChange);
 }
 
 window.addEventListener('load', handleLoad);

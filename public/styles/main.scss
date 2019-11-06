@@ -3,21 +3,18 @@ $grisOscuro: #D6D6D6;
 
 .storeContainer {
     display: flex;
+    height: fit-content;
 }
 
 .filter {
     flex: 1;
-    height: 1304px;
+    height: 100%;
     box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
     position: relative;
     padding: 20px;
 
     select:focus {
         outline: none;
-    }
-
-    &__form {
-        margin-bottom: 10px;
     }
 
     &__textInput {
@@ -27,6 +24,7 @@ $grisOscuro: #D6D6D6;
         border-radius: 16px;
         width: 100%;
         padding: 0 10px;
+        margin-bottom: 10px;
     }
 
     &__button {
@@ -108,6 +106,8 @@ $grisOscuro: #D6D6D6;
     flex-wrap: wrap;
     height: fit-content;
     padding: 10px;
+    align-items: center;
+    justify-content: center;
 
     &__product {
         margin: 11px;

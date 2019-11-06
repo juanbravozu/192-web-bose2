@@ -15,7 +15,29 @@ function createRoutes(app, db) {
         
         var order = request.query.orderBy;
 
-        var cursor = products.find();
+        var filters = {};
+
+        var type = request.query.type;
+
+        // if(request.query.type != undefined) type.push(request.query.type);
+
+         if(Array.isArray(type)) {
+             filters.type = { $in: type };
+         } else if(type != undefined) {
+             filters.type = type;
+         }   
+
+         if(request.query.price != undefined) {
+             filters.price = { $lte: parseInt(request.query.price) };
+         }
+
+         if(request.query.search != undefined) {
+            filters.name = '/.*'+request.query.search+'.*/';
+         }
+
+        console.log(filters);
+
+        var cursor = products.find( filters );
 
         if(order == 'rating') {
             cursor.sort({ rating: -1 })
