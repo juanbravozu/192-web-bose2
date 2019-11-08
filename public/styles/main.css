@@ -41,6 +41,10 @@
   border: none;
 }
 
+.filter__button:focus {
+  outline: none;
+}
+
 .filter__title {
   font-weight: 700;
   font-size: 18px;

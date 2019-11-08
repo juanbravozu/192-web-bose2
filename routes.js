@@ -19,7 +19,7 @@ function createRoutes(app, db) {
 
         var type = request.query.type;
 
-        // if(request.query.type != undefined) type.push(request.query.type);
+
 
          if(Array.isArray(type)) {
              filters.type = { $in: type };
@@ -31,8 +31,11 @@ function createRoutes(app, db) {
              filters.price = { $lte: parseInt(request.query.price) };
          }
 
+         console.log(request.query.search);
+
          if(request.query.search != undefined) {
-            filters.name = '/.*'+request.query.search+'.*/';
+            filters.name = { $regex: '.*'+request.query.search+'.*', $options: 'i' };
+            console.log('buscar por nombre');
          }
 
         console.log(filters);
@@ -60,7 +63,7 @@ function createRoutes(app, db) {
                 return;
             });
         } else if(order == 'cheaper') {
-            cursor.sort({ rating: 1 })
+            cursor.sort({ price: 1 })
             .toArray((err, result) => {
 
                 assert.equal(null, err);

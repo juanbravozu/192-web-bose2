@@ -120,7 +120,9 @@ function handleLoad() {
 
         route = route.concat('&price='+range.value);
         
-        console.log(search.value);
+        route = route.concat('&search='+search.value);
+
+        console.log('Valor Búsqueda: '+search.value);
 
         getProducts(route);
     };
@@ -138,7 +140,7 @@ function handleLoad() {
 
     range.addEventListener('change', handleChange);
     
-    searchButton.addEventListener('onClick', handleChange);
+    searchButton.addEventListener('click', handleChange);
 }
 
 window.addEventListener('load', handleLoad);

@@ -34,6 +34,10 @@ $grisOscuro: #D6D6D6;
         top: 20px;
         background: none;
         border: none;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     &__title {
