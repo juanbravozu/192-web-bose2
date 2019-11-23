@@ -116,6 +116,35 @@ function createRoutes(app, db) {
                 response.render('productDetails', context);
             });
     });
+
+    app.post('/api/shoppingCart', (request, response) => {
+        var cart = db.collection('shoppingCart');
+
+        var id = request.body._id;
+
+        cart.find({ _id : new ObjectID(id) })
+            .toArray((err, result) => {
+                assert.equal(null, err)
+
+                result[0].amount = result[0].amount + 1;
+                console.log(result[0]);
+
+                cart.updateOne({ _id : new ObjectID(id) }, {
+                    $set : { amount : result[0].amount }
+                });
+            });
+    });
+
+    app.get('/api/shoppingCart', (request, response) => {
+        var cart = db.collection('shoppingCart');
+
+        cart.find()
+            .toArray((err, result) => {
+                assert.equal(null, err);
+
+                response.send(result);
+            });
+    });
 }
 
 module.exports = createRoutes;

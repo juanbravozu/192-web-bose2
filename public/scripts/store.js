@@ -66,7 +66,24 @@ function handleLoad() {
     
                     var addButton = document.createElement('button');
                     addButton.classList.add('fas', 'fa-cart-plus', 'fa-lg', 'items__cartButton');
+                    addButton.setAttribute('data-id', item._id);
     
+                    addButton.addEventListener('click', () => {
+                        
+                        var data = new URLSearchParams();
+                        data.append("_id", item._id);
+
+                        fetch('/api/shoppingCart', {
+                            method : 'POST', 
+                            body : data
+                        })
+                        .then((raw) => {
+                            return raw.json();
+                        }).then((info) => {
+                            console.log(info);
+                        });
+                    });
+
                     topHalf.appendChild(img);
                     bottomHalf.appendChild(title);
                     bottomHalf.appendChild(price);
