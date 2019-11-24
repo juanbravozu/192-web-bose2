@@ -1,6 +1,21 @@
 function handleLoad() {
 
-    
+    function displayCart() {
+        fetch('/api/shoppingCart').then((raw) => {
+            return raw.json();
+        })
+        .then((info) => {
+            var totalAmount = 0;
+            
+            info.forEach((item) => {
+                totalAmount += item.amount;
+            });
+
+            console.log(totalAmount);
+        });
+    }
+
+    displayCart();
     
     function getProducts(route) {
         fetch('/api/products'+route).then((raw) => {
@@ -73,13 +88,15 @@ function handleLoad() {
                         var data = new URLSearchParams();
                         data.append("_id", item._id);
 
-                        fetch('/api/shoppingCart', {
+                        var promise = fetch('/api/shoppingCart', {
                             method : 'POST', 
                             body : data
-                        })
-                        .then((raw) => {
+                        });
+
+                        promise.then((raw) => {
                             return raw.json();
                         }).then((info) => {
+                            displayCart();
                             console.log(info);
                         });
                     });

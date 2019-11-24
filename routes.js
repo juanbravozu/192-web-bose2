@@ -133,6 +133,8 @@ function createRoutes(app, db) {
                     $set : { amount : result[0].amount }
                 });
             });
+
+            response.send({ message : 'ok' });
     });
 
     app.get('/api/shoppingCart', (request, response) => {
