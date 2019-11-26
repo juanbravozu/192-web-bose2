@@ -283,12 +283,108 @@ $grisOscuro: #D6D6D6;
     }
 }
 
-.itemsContainer {
+.details {
 
     display: flex;
-    
+
     &__image {
-        height: 100px;
+        width: 500px;
+        height: 500px;
+        padding: 30px;
         background-color: $grisClaro;
+        margin: 30px;
+
+        & img {
+            height: 100%;
+        }
+    }
+
+    &__info {
+        margin: 30px 50px;
+    }
+
+    &__body {
+        font-size: 20px;
+    }
+
+    &__add {
+        width: 180px;
+        height: 44px;
+        background-color: black;
+        cursor: pointer;
+        color: white;
+        border-radius: 22px;
+        transition: all .2s ease-out;
+        border: none;
+        font-size: 18px;
+
+        &:hover {
+            background-color: white;
+            color: black;
+            border: solid 2px black;
+        }
+    }
+}
+
+.cartItems {
+    padding: 30px;
+}
+
+.itemsContainer {
+    
+
+    &__item {
+        display: flex;
+        width: 90%;
+        margin: 30px 0;
+    }
+
+    &__image {
+        max-width: 100%;
+        max-height: 100%;
+
+        &Container {
+            height: 180px;
+            width: 180px;
+            padding: 15px;
+            background-color: $grisClaro;
+            margin: 0 30px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__body {
+        font-size: 18px;
+        font-weight: 400;
+
+        &--path {
+            font-weight: 700;
+            display: inline;
+        }
+
+        &--separator {
+            margin: 0 10px;
+            display: inline;
+        }
+    }
+
+    &__title {
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    &__eraseButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
     }
 }

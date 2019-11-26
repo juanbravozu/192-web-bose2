@@ -5,5 +5,23 @@
         <p class="productDetail__title productDetail__title--small">{{product.name}}</p>
     </div>
 
-    <img src="/images{{product.image}}" alt="" class="productDetail__image">
+    <div class="details">
+        <div class="details__image">
+            <img src="/images{{product.image}}" alt="">
+        </div>
+        
+
+        <div class="details__info">
+            <h1 class="details__title">{{product.name}}</h1>
+
+            <p class="details__price details__body">${{product.price}}</p>
+
+            <p class="details__description details__body">{{product.description}}</p>
+
+            <button class="details__add">Añadir al carrito</button>
+        </div>
+    </div>
+    
 </section>
+
+<script src="/scripts/product.js"></script>

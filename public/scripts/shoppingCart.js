@@ -22,6 +22,8 @@ function handleLoad() {
                         var containerItem = document.createElement('div');
                         containerItem.classList.add('itemsContainer__item');
                        
+                        var imgContainer = document.createElement('div');
+                        imgContainer.classList.add('itemsContainer__imageContainer');
 
                         var img = document.createElement('img');
                         img.setAttribute('src', '/images'+products[0].image);
@@ -29,20 +31,21 @@ function handleLoad() {
 
                         var infoContainer = document.createElement('div');
 
-                        var name = document.createElement('h1');
+                        var name = document.createElement('a');
                         name.classList.add('itemsContainer__title');
+                        name.setAttribute('href', '/producto/'+item._id);
                         name.innerHTML = products[0].name;
 
                         var price = document.createElement('p');
                         price.classList.add('itemsContainer__body');
-                        name.innerHTML = '<strong>Precio: </strong>' + products[0].price;
+                        price.innerHTML = '<strong>Precio: </strong>$' + products[0].price;
 
                         var rating = document.createElement('div');
                         rating.classList.add('itemsContainer__rating');
 
                         var ratingIcon = document.createElement('img');
                         ratingIcon.classList.add('itemsContainer__ratingIcon');
-                        ratingIcon.setAttribute('src', './images/rating.png');
+                        ratingIcon.setAttribute('src', '/images/ratingBlack.png');
 
                         var ratingScore = document.createElement('p');
                         ratingScore.classList.add('itemsContainer__body');
@@ -60,7 +63,7 @@ function handleLoad() {
                         var erase = document.createElement('button');
                         erase.setAttribute('data-id', item._id);
                         erase.classList.add('itemsContainer__eraseButton');
-                        erase.innerHTML = '<i class="fas fa-times"></i>';
+                        erase.innerHTML = '<i class="fas fa-times fa-lg"></i>';
                         erase.addEventListener('click', () => {
 
                             var data = new URLSearchParams();
@@ -78,7 +81,8 @@ function handleLoad() {
                             });
                         });
 
-                        containerItem.appendChild(img);
+                        imgContainer.appendChild(img);
+                        containerItem.appendChild(imgContainer);
                         containerItem.appendChild(infoContainer);
                         containerItem.appendChild(amount);
                         containerItem.appendChild(erase);

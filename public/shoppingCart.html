@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/4433635600.js" crossorigin="anonymous"></script>
     <title>Carrito de compras</title>
 </head>
 
@@ -18,7 +18,7 @@
         <input type="image" src="./images/menu.svg" class="header__btn">
         <nav>
             <a href="/" class="link">Inicio</a>
-            <a href="#" class="link link--selected">Tienda</a>
+            <a href="/tienda" class="link">Tienda</a>
             <a href="#" class="link">Galería</a>
             <a href="#" class="link">Acerca de</a>
 
@@ -26,6 +26,11 @@
     </header>
 
     <section class="cartItems">
+        <div class="cartItems__path">
+                <a href="/tienda" class="itemsContainer__body">Tienda</a>
+                <p class="itemsContainer__body itemsContainer__body--separator">/</p>
+                <p class="itemsContainer__body itemsContainer__body--path">Carrito de compras</p>
+        </div>
         <div class="itemsContainer"></div>
     </section>
 
