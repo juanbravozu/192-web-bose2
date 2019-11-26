@@ -11,7 +11,8 @@ function handleLoad() {
                 totalAmount += item.amount;
             });
 
-            console.log(totalAmount);
+            var amountText = document.querySelector('.cartAmount');
+            amountText.innerHTML = totalAmount;
         });
     }
 

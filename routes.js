@@ -19,28 +19,36 @@ function createRoutes(app, db) {
 
         var type = request.query.type;
 
+        var id = request.query.id;
 
+        var cursor;
 
-         if(Array.isArray(type)) {
-             filters.type = { $in: type };
-         } else if(type != undefined) {
-             filters.type = type;
-         }   
+        if(id == undefined) {
+            if(Array.isArray(type)) {
+                filters.type = { $in: type };
+            } else if(type != undefined) {
+                filters.type = type;
+            }   
+   
+            if(request.query.price != undefined) {
+                filters.price = { $lte: parseInt(request.query.price) };
+            }
+   
+            console.log(request.query.search);
+   
+            if(request.query.search != undefined) {
+               filters.name = { $regex: '.*'+request.query.search+'.*', $options: 'i' };
+               console.log('buscar por nombre');
+            }
+   
+           console.log(filters);
+   
+           cursor = products.find( filters );
+        } else {
+            cursor = products.find( { _id: new ObjectID(id) });
+        }
 
-         if(request.query.price != undefined) {
-             filters.price = { $lte: parseInt(request.query.price) };
-         }
-
-         console.log(request.query.search);
-
-         if(request.query.search != undefined) {
-            filters.name = { $regex: '.*'+request.query.search+'.*', $options: 'i' };
-            console.log('buscar por nombre');
-         }
-
-        console.log(filters);
-
-        var cursor = products.find( filters );
+         
 
         if(order == 'rating') {
             cursor.sort({ rating: -1 })
@@ -137,6 +145,18 @@ function createRoutes(app, db) {
             response.send({ message : 'ok' });
     });
 
+    app.delete('/api/shoppingCart', (request, response) => {
+        var cart = db.collection('shoppingCart');
+
+        var id = request.body._id;
+
+        cart.updateOne({ _id: new ObjectID(id) }, {
+            $set : { amount : 0 }
+        });
+
+        response.send({ message : 'deleted' })
+    });
+
     app.get('/api/shoppingCart', (request, response) => {
         var cart = db.collection('shoppingCart');
 
@@ -146,6 +166,10 @@ function createRoutes(app, db) {
 
                 response.send(result);
             });
+    });
+
+    app.get('/carrito', (request, response) => {
+        response.sendFile(__dirname+'/public/shoppingCart.html');
     });
 }
 

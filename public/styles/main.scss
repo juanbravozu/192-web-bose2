@@ -224,22 +224,27 @@ $grisOscuro: #D6D6D6;
     }
 }
 
+.cart {
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top: 25px
+}
+
 .shoppingCart {
     border: none;
     background: none;
-    position: absolute;
-    right: 30px;
-    cursor: pointer;
     transition: color .2s ease-out;
+    margin: 0 5px;
     color: white;
-
-    &:focus {
-        outline: none;
-    }
 
     &:hover {
         color: $grisClaro;
     }
+}
+
+.cartAmount {
+    color: white;
 }
 
 .productDetail {
@@ -275,5 +280,15 @@ $grisOscuro: #D6D6D6;
             margin: 0 10px;
             display: inline;
         }
+    }
+}
+
+.itemsContainer {
+
+    display: flex;
+    
+    &__image {
+        height: 100px;
+        background-color: $grisClaro;
     }
 }
