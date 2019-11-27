@@ -22,12 +22,17 @@ const client = new MongoClient(url);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-client.connect((err) => {
-    assert.equal(null, err);
+client.connect('mongodb+srv://cluster0-s4v3e.mongodb.net/store?retryWrites=true&w=majority', {
+    auth : {
+        user: 'juanbravo',
+        password: 'australia98'
+    }
+}, (err, client) => {
+    if(err) throw err;
 
-    const db = client.db(dbName);
+    db = client.db('store');
 
-    createRoutes(app, db);
+    app.listen(process.env.PORT || port);
 });
 
 app.engine('handlebars', exphbs());
@@ -39,6 +44,6 @@ app.use(express.static('public'));
 
 
 
-app.listen(port, () => {
+/*app.listen(port, () => {
     console.log(`Conexión iniciada en el puerto ${port}`);
-});
+});*/
