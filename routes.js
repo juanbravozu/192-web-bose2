@@ -138,7 +138,9 @@ function createRoutes(app, db) {
 
                // if(result[0] != undefined) {
                    // result[0].amount = result[0].amount + 1;
-                    console.log(result);
+                    result.forEach(element => {
+                        console.log(element._id === id);
+                    });
     
                     /*cart.updateOne({ _id : new ObjectID(id) }, {
                         $set : { amount : result[0].amount }
