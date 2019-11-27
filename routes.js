@@ -130,6 +130,8 @@ function createRoutes(app, db) {
 
         var id = request.body._id;
 
+        console.log('_id: '+id);
+
         cart.find({ _id : new ObjectID(id) })
             .toArray((err, result) => {
                 assert.equal(null, err)
