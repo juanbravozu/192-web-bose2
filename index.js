@@ -22,17 +22,17 @@ const client = new MongoClient(url);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-client.connect('mongodb+srv://cluster0-s4v3e.mongodb.net/store?retryWrites=true&w=majority', {
-    auth : {
-        user: 'juanbravo',
-        password: 'australia98'
-    }
-}, (err, client) => {
-    if(err) throw err;
+MongoClient.connect('mongodb+srv://cluster0-s4v3e.mongodb.net/store?retryWrites=true&w=majority', {
+        auth : {
+            user: 'juanbravo',
+            password: 'australia98'
+        }
+    }, (err, client) => {
+        if(err) throw err;
 
-    db = client.db('store');
+        db = client.db('store');
 
-    app.listen(process.env.PORT || port);
+        app.listen(process.env.PORT || port);
 });
 
 app.engine('handlebars', exphbs());
