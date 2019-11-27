@@ -137,12 +137,12 @@ function createRoutes(app, db) {
                 assert.equal(null, err)
 
                // if(result[0] != undefined) {
-                    result[0].amount = result[0].amount + 1;
-                    console.log(result[0]);
+                   // result[0].amount = result[0].amount + 1;
+                    console.log(result);
     
-                    cart.updateOne({ _id : new ObjectID(id) }, {
+                    /*cart.updateOne({ _id : new ObjectID(id) }, {
                         $set : { amount : result[0].amount }
-                    });
+                    });*/
                 //}
                 
             });
