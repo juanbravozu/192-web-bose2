@@ -144,8 +144,8 @@ function createRoutes(app, db) {
     
                     /*cart.updateOne({ _id : new ObjectID(id) }, {
                         $set : { amount : result[0].amount }
-                    });*/
-                //}
+                    });
+                }*/
                 
             });
 
