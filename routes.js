@@ -136,16 +136,14 @@ function createRoutes(app, db) {
             .toArray((err, result) => {
                 assert.equal(null, err)
 
-               // if(result[0] != undefined) {
-                   // result[0].amount = result[0].amount + 1;
-                    result.forEach(element => {
-                        console.log(element._id);
-                    });
+                if(result[0] != undefined) {
+                    result[0].amount = result[0].amount + 1;
+                    
     
-                    /*cart.updateOne({ _id : new ObjectID(id) }, {
+                    cart.updateOne({ _id : new ObjectID(id) }, {
                         $set : { amount : result[0].amount }
                     });
-                }*/
+                }
                 
             });
 
