@@ -139,7 +139,7 @@ function createRoutes(app, db) {
                // if(result[0] != undefined) {
                    // result[0].amount = result[0].amount + 1;
                     result.forEach(element => {
-                        console.log(element._id === id);
+                        console.log(element._id == new ObjectID(id));
                     });
     
                     /*cart.updateOne({ _id : new ObjectID(id) }, {
