@@ -32,6 +32,8 @@ MongoClient.connect('mongodb+srv://cluster0-s4v3e.mongodb.net/store?retryWrites=
 
         db = client.db('store');
 
+        createRoutes(app, db);
+        
         app.listen(process.env.PORT || port);
 });
 
