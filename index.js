@@ -22,9 +22,9 @@ const client = new MongoClient(url);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-client.connect((err) => {
+/*client.connect((err) => {
     assert.equal(null, err);
-});
+});*/
 
 MongoClient.connect('mongodb+srv://cluster0-s4v3e.mongodb.net/store?retryWrites=true&w=majority', {
         auth : {
