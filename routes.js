@@ -132,7 +132,7 @@ function createRoutes(app, db) {
 
         console.log('_id: '+id);
 
-        cart.find({  })
+        cart.find({ _id : new ObjectID(id) })
             .toArray((err, result) => {
                 assert.equal(null, err)
 
