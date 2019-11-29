@@ -56,6 +56,7 @@ function handleLoad() {
             return raw.json();
         })
         .then((info) => {
+            window.location.href = '/tienda';
             console.log(info);
         });
     });
