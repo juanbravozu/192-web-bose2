@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4433635600.js" crossorigin="anonymous"></script>
+    <title>Pago</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="nav__logo"><img src="./images/logo.png" alt="Bose logo"></a>
+        <input type="image" src="./images/menu.svg" class="header__btn">
+        <nav>
+            <a href="/" class="link">Inicio</a>
+            <a href="/tienda" class="link">Tienda</a>
+            <a href="/prueba" class="link">Prueba tus audífonos</a>
+            <a href="#" class="link">Acerca de</a>
+
+        </nav>
+    </header>
+
+    <section class="checkout">
+        <h1 class="text__title text__title--large">Confirma tus datos</h1>
+
+        <form action="" class="checkout__form">
+            <div class="form__name">
+                <div>
+                    <label for="form__firstname" class="form__label">Nombre</label>
+                    <input type="text" id="form_firstname" name="firstname">
+                </div>
+
+                <div>
+                    <label for="form__lastname" class="form__label">Apellidos</label>
+                    <input type="text"  id="form__lastname" name="lastname">
+                </div>
+            </div>
+
+            <div>
+                <label for="form__address">Dirección</label>
+                <input type="text" id="form__address" name="address">
+            </div>
+            
+
+            <div class="form__price">
+                <h1 class="text__title">Precio total</h1>
+                <p class="text__body form__priceValue"></p>
+            </div>
+
+            <button type="submit">Confirmar pago</button>
+        </form>
+    </section>
+
+    </footer>
+
+    <script src="./scripts/checkout.js"></script>
+</body>
+
+</html>

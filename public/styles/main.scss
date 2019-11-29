@@ -328,15 +328,94 @@ $grisOscuro: #D6D6D6;
 
 .cartItems {
     padding: 30px;
+    min-height: 366px;
+    &__alert {
+        display: none;
+    }
+
+    &__path a {
+        text-decoration: none;
+        color: black;
+        font-weight: 400;
+
+        &:hover {
+            font-weight: 700;
+        }
+    }
+
+    &__labels {
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__total {
+        position: relative;
+        margin-left: 57vw;
+
+        & strong {
+            margin: 0 30px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 2px;
+            background-color: rgb(90, 86, 86);
+            left: 20px;
+            top: -10px;
+        }
+    }
+
+    &__checkout {
+        display: block;
+        margin: 50px auto;
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        width: 180px;
+        height: 46px;
+        border-radius: 23px;
+        border: solid 2px white;
+        text-align: center;
+        line-height: 42px;
+
+        transition: all .2s ease-out;
+
+        &:hover {
+            background-color: white;
+            color: black;
+            border: solid 2px black;
+        }
+    }
 }
 
 .itemsContainer {
     
+    &__rating {
+        display: flex;
+        align-items: center;
+
+        &Icon {
+            height: 17px;
+            width: 17px;
+            margin: 5px;
+        }
+    }
 
     &__item {
         display: flex;
-        width: 90%;
+        width: 100%;
         margin: 30px 0;
+    }
+
+    &__amount {
+        position: relative;
+        right: 20px;
+        flex: 1;
+        margin: 85px 0;
+        text-align: center;
     }
 
     &__image {
@@ -349,11 +428,16 @@ $grisOscuro: #D6D6D6;
             padding: 15px;
             background-color: $grisClaro;
             margin: 0 30px;
+            flex: 1;
             
             display: flex;
             align-items: center;
             justify-content: center;
         }
+    }
+
+    &__info {
+        flex: 3;
     }
 
     &__body {
@@ -379,6 +463,8 @@ $grisOscuro: #D6D6D6;
     }
 
     &__eraseButton {
+        position: relative;
+        flex: 1;
         background: none;
         border: none;
         cursor: pointer;
@@ -387,4 +473,84 @@ $grisOscuro: #D6D6D6;
             outline: none;
         }
     }
+}
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 50px auto;
+    padding: 40px 0;
+    justify-content: center;
+    align-items: center;
+
+    & div {
+        margin: 10px 0;
+    }
+}
+
+.form {
+
+    &__name {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+            
+        & input {
+            width: 240px !important;
+        }        
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &__price {
+        margin: 40px 0 !important;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__priceValue {
+        margin: 0 !important;
+    }
+}
+
+form {
+    margin-top: 50px;
+
+    & input[type=text] {
+    
+        width: 100%;
+        padding: 0 10px;
+        height: 26px;
+        border-radius: 13px;
+        border: #191919 solid 1px;
+    }
+
+    & button {
+        display: block;
+        background-color: black;
+        color: white;
+        width: 150px;
+        height: 44px;
+        border-radius: 22px;
+        transition: all .2s ease-out;
+        border: solid 2px black;
+        margin: 0 auto;
+        cursor: pointer;
+
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.text__title--large {
+    font-size: 32px;
+    margin: 0 250px;
 }

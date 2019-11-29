@@ -176,6 +176,35 @@ function createRoutes(app, db) {
     app.get('/carrito', (request, response) => {
         response.sendFile(__dirname+'/public/shoppingCart.html');
     });
+
+    app.get('/pago', (request, response) => {
+        response.sendFile(__dirname+'/public/checkout.html');
+    });
+
+    app.post('/api/checkout', (request, response) => {
+        var orders = db.collection('orders');
+
+        var order = {};
+
+        order.firstname = request.body.firstname;
+        order.lastname = request.body.lastname;
+        order.address = request.body.address;
+        
+
+       
+        var products = request.body.products.split(',');
+
+        order.products = products;
+        console.log(products);
+
+        orders.insert(order);
+
+        response.send({ message: 'ok' });
+    });
+
+    app.get('/prueba', (request, response) => {
+        response.sendFile(__dirname+'interaction.html');
+    });
 }
 
 module.exports = createRoutes;

@@ -364,14 +364,104 @@
 
 .cartItems {
   padding: 30px;
+  min-height: 366px;
+}
+
+.cartItems__alert {
+  display: none;
+}
+
+.cartItems__path a {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+}
+
+.cartItems__path a:hover {
+  font-weight: 700;
+}
+
+.cartItems__labels {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.cartItems__total {
+  position: relative;
+  margin-left: 57vw;
+}
+
+.cartItems__total strong {
+  margin: 0 30px;
+}
+
+.cartItems__total::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 2px;
+  background-color: #5a5656;
+  left: 20px;
+  top: -10px;
+}
+
+.cartItems__checkout {
+  display: block;
+  margin: 50px auto;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  width: 180px;
+  height: 46px;
+  border-radius: 23px;
+  border: solid 2px white;
+  text-align: center;
+  line-height: 42px;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.cartItems__checkout:hover {
+  background-color: white;
+  color: black;
+  border: solid 2px black;
+}
+
+.itemsContainer__rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.itemsContainer__ratingIcon {
+  height: 17px;
+  width: 17px;
+  margin: 5px;
 }
 
 .itemsContainer__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  width: 100%;
   margin: 30px 0;
+}
+
+.itemsContainer__amount {
+  position: relative;
+  right: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 85px 0;
+  text-align: center;
 }
 
 .itemsContainer__image {
@@ -385,6 +475,9 @@
   padding: 15px;
   background-color: #E5E5E5;
   margin: 0 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -394,6 +487,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.itemsContainer__info {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
 }
 
 .itemsContainer__body {
@@ -419,6 +518,10 @@
 }
 
 .itemsContainer__eraseButton {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   background: none;
   border: none;
   cursor: pointer;
@@ -426,5 +529,102 @@
 
 .itemsContainer__eraseButton:focus {
   outline: none;
+}
+
+.checkout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 50px auto;
+  padding: 40px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkout div {
+  margin: 10px 0;
+}
+
+.form__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 500px;
+}
+
+.form__name input {
+  width: 240px !important;
+}
+
+.form__label {
+  display: block;
+}
+
+.form__price {
+  margin: 40px 0 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__priceValue {
+  margin: 0 !important;
+}
+
+form {
+  margin-top: 50px;
+}
+
+form input[type=text] {
+  width: 100%;
+  padding: 0 10px;
+  height: 26px;
+  border-radius: 13px;
+  border: #191919 solid 1px;
+}
+
+form button {
+  display: block;
+  background-color: black;
+  color: white;
+  width: 150px;
+  height: 44px;
+  border-radius: 22px;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  border: solid 2px black;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: white;
+  color: black;
+}
+
+form button:focus {
+  outline: none;
+}
+
+.text__title--large {
+  font-size: 32px;
+  margin: 0 250px;
 }
 /*# sourceMappingURL=main.css.map */

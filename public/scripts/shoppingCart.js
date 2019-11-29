@@ -3,6 +3,8 @@ function handleLoad() {
     function displayItems() {
         var container = document.querySelector('.itemsContainer');
 
+        var total = 0;
+
         fetch('/api/shoppingCart').then((raw) => {
             return raw.json();
         })
@@ -18,6 +20,8 @@ function handleLoad() {
                     .then((products) => {
                         console.log(products);
                         
+                        total += (item.amount*products[0].price);
+                        console.log('Price: '+total);
 
                         var containerItem = document.createElement('div');
                         containerItem.classList.add('itemsContainer__item');
@@ -30,6 +34,7 @@ function handleLoad() {
                         img.classList.add('itemsContainer__image');
 
                         var infoContainer = document.createElement('div');
+                        infoContainer.classList.add('itemsContainer__info');
 
                         var name = document.createElement('a');
                         name.classList.add('itemsContainer__title');
@@ -59,6 +64,7 @@ function handleLoad() {
 
                         var amount = document.createElement('p');
                         amount.innerHTML = item.amount;
+                        amount.classList.add('itemsContainer__amount');
 
                         var erase = document.createElement('button');
                         erase.setAttribute('data-id', item._id);
@@ -88,10 +94,25 @@ function handleLoad() {
                         containerItem.appendChild(erase);
 
                         container.appendChild(containerItem);
+
+                        var message = document.querySelector('.cartItems__alert');
+                        console.log('amount: '+total);
+                        if(total != 0) {
+                            var totalPrice = document.querySelector('.cartItems__total');
+                            message.style.display = 'none';
+                            totalPrice.innerHTML = '<strong>Precio total:    </strong> $'+total;
+                        } else {
+                        
+                            message.style.display = 'block';
+                        }
                     });
                 }
-            });
+                
+            });            
         });
+
+        
+        
     }
 
     displayItems();
