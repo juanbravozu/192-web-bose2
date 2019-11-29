@@ -556,6 +556,8 @@ form {
 }
 
 .screen {
+    position: absolute;
+    z-index: 10;
     width: 100%;
     height: 591px;
     background-color: #4F4F4F;
@@ -608,9 +610,8 @@ form {
     }
 
     &Container {
-        width: 100%;
-        height: 591px;
-        background-color: #4F4F4F;
+        display: block;
+        overflow: hidden;
 
         &--inactive {
             display: none;

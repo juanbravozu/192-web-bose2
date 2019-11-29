@@ -629,6 +629,8 @@ form button:focus {
 }
 
 .screen {
+  position: absolute;
+  z-index: 10;
   width: 100%;
   height: 591px;
   background-color: #4F4F4F;
@@ -687,9 +689,8 @@ form button:focus {
 }
 
 .interactionContainer {
-  width: 100%;
-  height: 591px;
-  background-color: #4F4F4F;
+  display: block;
+  overflow: hidden;
 }
 
 .interactionContainer--inactive {
