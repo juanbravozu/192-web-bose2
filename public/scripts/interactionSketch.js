@@ -1,7 +1,8 @@
 var songs = [],
     fft,
     songIndex,
-    tone;
+    tone,
+    reverb;
 
 function preload() {
     songs.push(loadSound('/sounds/mantis.mp3'));
@@ -52,6 +53,14 @@ function displaySpectrum(spectrum) {
     });
 }
 
+function getReverb() {
+    songs[songIndex].disconnect();
+
+    reverb.process(songs[songIndex]);
+
+    songs[songIndex].play();
+}
+
 function setup() {
     colorMode(HSB, 360, 100, 100); // set colour mode of sketch to HSB (360 degress, 100%, 100%)
     angleMode(DEGREES);
@@ -60,6 +69,7 @@ function setup() {
     createCanvas(window.innerWidth, window.innerHeight - 66);
     fill(0);
     fft = new p5.FFT(0.8, 256);
+    reverb = new p5.Reverb();
     songIndex = undefined;
 
     tone = 0;
@@ -83,8 +93,11 @@ function draw() {
         rect((width * (i + 1)) / 4, height - 75, 200, 75);
     }
 
+    fill(200);
+    rect(width/8, height-75, 60, 60);
     fill(0);
     textAlign(CENTER);
+    text('Reverb', width/8, height.-70);
     textSize(20);
     textStyle(BOLD);
     text('Orquesta', width / 4, height - 70);
