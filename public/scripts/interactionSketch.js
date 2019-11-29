@@ -97,7 +97,7 @@ function draw() {
     rect(width/8, height-75, 60, 60);
     fill(0);
     textAlign(CENTER);
-    text('Reverb', width/8, height.-70);
+    text('Reverb', width/8, height-70);
     textSize(20);
     textStyle(BOLD);
     text('Orquesta', width / 4, height - 70);
