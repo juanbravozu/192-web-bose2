@@ -299,6 +299,11 @@ $grisOscuro: #D6D6D6;
         }
     }
 
+    &__rating {
+        display: flex;
+        justify-content: center;
+    }
+
     &__info {
         margin: 30px 50px;
     }
