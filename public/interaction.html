@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/p5@[p5_version]/lib/p5.js"></script>    
-    <script src="./scripts/interaction.js"></script>
+    <script src="/libraries/p5.js"></script>    
+    <script src="/libraries/gsap.min.js"></script>
+    <script src="/libraries/CustomEase.min.js"></script>
+    <script src="./scripts/interactionSketch.js"></script>
     <title>Prueba tus audífonos</title>
 </head>
 
@@ -30,17 +32,21 @@
         </nav>
     </header>
 
-    <div class="interactionContainer"></div>
+    <div class="screen">
 
-    <footer>
-        <img src="/images/logo.png" alt="" class="logo logo--footer">
-        <div class="vertical"></div>
-        <div class="links">
-            <a href="#" class="link ">Contáctanos</a>
-            <a href="#" class="link ">Acerca de nosotros</a>
-            <a href="#" class="link ">Tiendas físicas</a>
+        <div class="interaction__button">
+            <img src="/images/headphones.svg" alt="" class="interaction__image">
+            <div class="interaction__playButton">
+                <img src="/images/play.png" alt="" class="interaction__play">
+            </div>
+           
         </div>
-    </footer>
+        <p class="text__body text__body--interaction">Te recomendamos usar audífonos Bose para esta experiencia</p>            
+    </div>
+
+    <div class="interactionContainer interactionContainer--inactive"></div>
+
+    <script src="./scripts/interaction.js"></script>
 </body>
 
 </html>

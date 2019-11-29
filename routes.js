@@ -203,7 +203,7 @@ function createRoutes(app, db) {
     });
 
     app.get('/prueba', (request, response) => {
-        response.sendFile(__dirname+'interaction.html');
+        response.sendFile(__dirname+'/public/interaction.html');
     });
 }
 
